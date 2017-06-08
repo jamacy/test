@@ -6,4 +6,13 @@ node_js:
   - '4.2.6'
   - '5.2.0'
 
-script: npm run build
+cache:
+  directories:
+    - node_modules
+before_install:
+    - npm install
+
+script:
+ － npm run test
+after_script:
+  - npm run coveralls

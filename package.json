@@ -4,7 +4,8 @@
   "description": "hello",
   "main": "tes.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./node_modules/.bin/istanbul  cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "node app.js"
   },
   "repository": {
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/jamacy/test/issues"
   },
-  "homepage": "https://github.com/jamacy/test#readme"
+  "homepage": "https://github.com/jamacy/test#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2"
+  }
 }
